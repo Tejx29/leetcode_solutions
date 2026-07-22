@@ -42,8 +42,6 @@ int main () {
     //     arr[i] = temp;
     // }
 
-    int maxi;
-    
     for(int i = n - 1; i > 0; i--) {                        // Total iterations
 
         for(int j = 0; j < n - 1; j++) {                    // Comparison
