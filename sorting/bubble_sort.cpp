@@ -24,14 +24,23 @@ int main () {
 
         for(int j = 0; j <= i - 1; j++) {                    // Comparison
 
+            int didSwap = 0;
+
             if(arr[j] > arr[j + 1]) {
 
                 int temp = arr[j+1];
                 arr[j+1] = arr[j];
                 arr[j] = temp;
 
+                didSwap = 1;
+
             }
 
+            if(didSwap == 0) {
+
+                break;
+
+            }
         }
         
     }
