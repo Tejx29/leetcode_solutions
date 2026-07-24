@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void rec_bubble(vector <int> &arr, int n, int i, int j) {
+void rec_bubble(vector <int> &arr, int n) {
     
     if(n == 1) {
 
@@ -13,7 +13,7 @@ void rec_bubble(vector <int> &arr, int n, int i, int j) {
 
     int didSwap = 0;
 
-    cout << j << endl;
+    int j = 0;
 
     while(j < n - 1) {
     
@@ -23,25 +23,18 @@ void rec_bubble(vector <int> &arr, int n, int i, int j) {
 
             didSwap = 1; 
 
-            cout << "Swap: " << didSwap;
         }
-
-        if(didSwap == 0) {
-
-            return;
-
-        }  
 
         j = j + 1;
     }
 
-    cout << j;
+    if(didSwap == 0) {
 
-    j = 0;
+        return;
 
-    cout << j;
+    }  
 
-    rec_bubble(arr, n - 1, i, j);
+    rec_bubble(arr, n - 1);
 }
 
 
@@ -61,9 +54,7 @@ int main () {
     
     }
 
-    int i = 0, j = 0;
-
-    rec_bubble(arr, n, i, j);
+    rec_bubble(arr, n);
     
 
     cout << "Recursive Bubble Sort: ";
