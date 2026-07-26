@@ -1,0 +1,99 @@
+Mine:
+
+void quick_sort(vector <int> &arr, int n, int low, int high) {
+
+    int pivot = arr[low];
+
+    int i = low, j = high;
+
+    int count = 0;
+
+    for(int i = low; i < n; i++) {
+
+        cout << "* " << i << endl;
+
+        while(arr[i] > pivot) {
+
+            for(j = high; j > 0; j--) {
+
+                if(j < i && arr[j] < pivot) {
+
+                    swap(arr[j], arr[low]);
+
+                    return;
+
+                }
+
+                if(arr[j] < pivot) {
+
+                    swap(arr[j], arr[i]);
+
+                    cout << endl;
+
+                    break;
+                }
+            }
+        
+            break;
+        }
+    }
+}
+
+-------------------------------------------------------------------
+
+
+// for(int i = low; i < high; i++) {
+        
+    //     if(arr[i] > arr[pivot]) {
+
+    //         for(int j = high; j >= low; j--) {
+
+    //             if(arr[j] < arr[pivot]) {
+
+    //                 swap(arr[i], arr[j]);
+
+    //             }
+
+    //         }
+
+    //     }
+    // }
+
+    // for(int i = low; i < high; i++) {
+
+    //     if(arr[pivot] < arr[i]) {
+
+    //         swap(arr[pivot], arr[i]);
+
+    //         cout << "Swap 1: ";
+
+    //         for(int i = 0; i < n; i++) {
+
+    //             cout << arr[i] << " ";
+
+    //         }
+
+    //         cout << endl;
+
+    //     }
+        
+    //     for(int j = high; j > low; j--) {
+
+    //         if(arr[pivot] > arr[j]) {
+
+    //             swap(arr[pivot], arr[j]);
+
+    //             cout << "Swap 2: ";
+
+    //             for(int i = 0; i < n; i++) {
+
+    //                 cout << arr[i] << " ";
+
+    //             }
+
+    //             cout << endl;
+    //         }
+
+    //     }
+
+    // }
