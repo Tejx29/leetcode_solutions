@@ -27,7 +27,7 @@ void duplicates (vector<int> &v1, int n) {
 
     }
 
-    return;                                           //  8 8 5 5 7
+    return;                                           
 
 }
 
