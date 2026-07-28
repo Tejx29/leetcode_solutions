@@ -3,17 +3,27 @@
 
     using namespace std;
 
-    void left_rotate (vector<int> &v1, int n) {
-        
-        int temp = v1[0];
- 
-        for(int j = 1; j < n; j++) {
+    void left_rotate (vector<int> &v1, int n, int k) {
 
-            v1[j - 1] = v1[j];
+        k = k % n;
+
+        int temp = 0;
+ 
+        for(int i = 1; i <= k; i++) {
+
+            temp = v1[n - 1];
+            
+            for(int j = n - 1; j > 0; j--) {
+
+                v1[j] = v1[j - 1];
+    
+            }
+
+            v1[0] = temp;
 
         }
 
-        v1[n - 1] = temp;
+        return;
 
     }
         
@@ -34,8 +44,9 @@
 
         }
 
+        int k = 3;
 
-        left_rotate (v1, n);
+        left_rotate (v1, n, k);
 
         for(int i = 0; i < n; i++) {
 
