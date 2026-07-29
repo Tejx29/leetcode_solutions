@@ -3,7 +3,7 @@
 
     using namespace std;
 
-    void left_rotate (vector<int> &v1, int n, int k) {
+    void right_rotate_by_k_places (vector<int> &v1, int n, int k) {
 
         k = k % n;
 
@@ -46,7 +46,7 @@
 
         int k = 3;
 
-        left_rotate (v1, n, k);
+        right_rotate_by_k_places (v1, n, k);
 
         for(int i = 0; i < n; i++) {
 
