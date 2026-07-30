@@ -1,53 +1,53 @@
-    #include <iostream>
-    #include <bits/stdc++.h>
+#include <iostream>
+#include <bits/stdc++.h>
 
-    using namespace std;
+using namespace std;
 
-    void move_0_to_end (vector<int> &v1, int n) {
+void move_0_to_end (vector<int> &v1, int n) {
 
-        for(int i = 0; i < n - 1; i++) {
+    for(int i = 0; i < n - 1; i++) {
 
-            for(int j = i + 1; j < n; j++) {
+        for(int j = i + 1; j < n; j++) {
 
-                if(v1[i] == 0) {
+            if(v1[i] == 0) {
 
-                    swap(v1[i], v1[j]);
+                swap(v1[i], v1[j]);
 
-                }
             }
+        }
             
 
-        }
+    }
 
-        return;
+    return;
+
+}
+        
+int main () {
+
+    int n;
+        
+    cout << "Enter size of array: ";
+    cin >> n;
+
+    vector<int> v1(n);
+
+    cout << "Enter array elements: " << endl;
+
+    for(int i = 0; i < n; i++) {
+
+        cin >> v1[i];
 
     }
-        
-    int main () {
 
-        int n;
-        
-        cout << "Enter size of array: ";
-        cin >> n;
+    move_0_to_end (v1, n);
 
-        vector<int> v1(n);
+    for(int i = 0; i < n; i++) {
 
-        cout << "Enter array elements: " << endl;
-
-        for(int i = 0; i < n; i++) {
-
-            cin >> v1[i];
-
-        }
-
-        move_0_to_end (v1, n);
-
-        for(int i = 0; i < n; i++) {
-
-            cout << v1[i] << " ";
-
-        }
-
-        return 0;
+        cout << v1[i] << " ";
 
     }
+
+    return 0;
+
+}
