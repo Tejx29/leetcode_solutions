@@ -3,7 +3,7 @@
 
     using namespace std;
 
-    void right_rotate_by_k_places (vector<int> &v1, int n) {
+    void move_0_to_end (vector<int> &v1, int n) {
 
         for(int i = 0; i < n - 1; i++) {
 
@@ -40,7 +40,7 @@
 
         }
 
-        right_rotate_by_k_places (v1, n);
+        move_0_to_end (v1, n);
 
         for(int i = 0; i < n; i++) {
 
