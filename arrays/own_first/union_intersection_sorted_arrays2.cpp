@@ -68,26 +68,34 @@ void intersection_sorted (vector<int> v1, vector<int> v2, int n1, int n2, vector
 
     while (i < n1 && j < n2) {
 
-        if(v1[i] < v2[j]) {
+        cout << "Before: " << i << " " << j << endl;
 
-            i++;
+        if(v1[i] == v2[j]) {
 
-        }
+            if(inter.size() == 0 || inter.back() != v1[i]) {
 
-        else if(v1[i] > v2[j]) {
+                inter.push_back(v1[i]);
 
-            j++;
+                cout << "Pushed: " << v1[i] << endl;
 
-        }
+            }
 
-        else {
-
-            inter.push_back(v1[i]);
-
+            
             i++;
             j++;
+            continue;
+        }
+
+        if(v1[i] > v2[j] && v1[i] != v2[j]) {
+
+            j++;
+            continue;
 
         }
+
+        i++;
+
+        cout << "After: " << i << " " << j << endl;
     }
 
     return;
