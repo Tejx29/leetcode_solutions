@@ -3,9 +3,9 @@
 
 using namespace std;
 
-void max_consec_1s (vector<int> &v1, int n, int &count, int &maxi) {
+int max_consec_1s (vector<int> &v1, int n, int count, int maxi) {
 
-    for(int i = 0; i < n; i++) {
+    for(int i = 0; i < n; i++) {    
        
         if(v1[i] == 0) {
 
@@ -24,7 +24,7 @@ void max_consec_1s (vector<int> &v1, int n, int &count, int &maxi) {
 
     }
 
-    return;
+    return maxi;
 
 }
 
@@ -48,9 +48,7 @@ int main() {
     int count = 0;
     int maxi = 0;
 
-    max_consec_1s (v1, n, count, maxi);    
-
-    cout << maxi;
+    cout << max_consec_1s (v1, n, count, maxi);    
 
     return 0;
 
