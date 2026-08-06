@@ -3,11 +3,11 @@
 
 using namespace std;
 
-int once_twice (vector<int> arr, int hash[]) {
+int once_twice (vector<int>& arr, int hash[], int maxi) {
 
     int n = arr.size();
 
-    for(int i = 0; i < n; i++) {
+    for(int i = 0; i <= maxi; i++) {
 
         if(hash[i] == 1) {
 
@@ -16,6 +16,8 @@ int once_twice (vector<int> arr, int hash[]) {
         }
 
     }
+
+    return -1;
 
 } 
 
@@ -28,7 +30,7 @@ int main() {
 
     vector<int> arr(n);
     
-    int hash[20] = {0};
+    int maxi = INT_MIN;
 
     cout << "Enter array elements: " << endl;
 
@@ -36,7 +38,15 @@ int main() {
 
         cin >> arr[i];
 
+        if(arr[i] > maxi) {
+
+            maxi = arr[i];
+
+        }
+
     }
+
+    int hash[maxi + 1] = {0};
 
     for(int i = 0; i < n; i++) {
 
@@ -44,7 +54,7 @@ int main() {
 
     }
 
-    cout << once_twice (arr, hash);
+    cout << once_twice (arr, hash, maxi);
 
     return 0;
 
