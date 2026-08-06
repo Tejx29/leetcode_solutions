@@ -1,1 +1,3 @@
-cout << maxi << " " << count << endl;
+
+
+        return arr[i];
