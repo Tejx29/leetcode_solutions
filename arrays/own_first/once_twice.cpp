@@ -3,9 +3,7 @@
 
 using namespace std;
 
-int once_twice (vector<int>& arr, int hash[], int maxi) {
-
-    int n = arr.size();
+int once_twice (int hash[], int maxi) {
 
     for(int i = 0; i <= maxi; i++) {
 
@@ -54,7 +52,7 @@ int main() {
 
     }
 
-    cout << once_twice (arr, hash, maxi);
+    cout << once_twice (hash, maxi);
 
     return 0;
 
