@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int two_sum (vector<int> &arr, int n, int target) {
+int two_sum_1 (vector<int> &arr, int n, int target) {
 
     for(int i = 0; i < n - 1; i++) {
     
@@ -45,7 +45,7 @@ int main () {
     cout << "Enter target: ";
     cin >> target;
 
-    cout << two_sum (arr, n, target);
+    cout << two_sum_1 (arr, n, target);
     
     return 0;
 
