@@ -33,8 +33,12 @@ int longest_subarray_k_max (vector<int> &arr, int n, int k) {
                 
                 }
                 
-                len = j - i;
+                else {
+                    
+                    len = j - i;
                 
+                }
+
             }
             
             if(sum > k) {
