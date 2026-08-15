@@ -1,11 +1,9 @@
 #include<iostream>
-#include<math.h>
-#include<algorithm>
-#include<map>
+#include<bits/stdc++.h>
 
 using namespace std;
 
-int two_sum_3 (vector<int> &arr, int n, int target, map <int, int> &mpp) {
+vector<int> two_sum_3 (vector<int> &arr, int n, int target, map <int, int> &mpp) {
 
     for(int i = 0; i < n; i++) {
     
@@ -15,7 +13,7 @@ int two_sum_3 (vector<int> &arr, int n, int target, map <int, int> &mpp) {
         
         if(mpp.find(required) != mpp.end()) {
         
-            return {mpp(required), i};            // or return 1; 
+            return {mpp[required], i};            // or return 1; 
             
         }
         
@@ -50,7 +48,9 @@ int main () {
     cout << "Enter target: ";
     cin >> target;
 
-    cout << two_sum_3 (arr, n, target, mpp);
+    vector<int> ans = two_sum_3(arr, n, target, mpp);
+
+    cout << "[" << ans[0] << ", " << ans[1] << "]" << endl;
     
     return 0;
 

@@ -1,14 +1,13 @@
 #include<iostream>
-#include<math.h>
-#include<algorithm>
+#include<bits/stdc++.h>
 
 using namespace std;
 
-int two_sum (vector<int> &arr, int n, int target) {
+void two_sum (vector<int> &arr, int n, int target) {
 
     for(int i = 0; i < n - 1; i++) {
     
-        for(int j = 1; j < n; j++) {
+        for(int j = i + 1; j < n; j++) {
     
             if(arr[i] + arr[j] == target) {
             
@@ -20,7 +19,7 @@ int two_sum (vector<int> &arr, int n, int target) {
     
     }
 
-    return 0;
+    return;
 }
 
 int main () {
@@ -45,7 +44,7 @@ int main () {
     cout << "Enter target: ";
     cin >> target;
 
-    cout << two_sum (arr, n, target);
+    two_sum (arr, n, target);
     
     return 0;
 
