@@ -2,30 +2,22 @@ class Solution {
 public:
     int removeElement(vector<int>& nums, int val) {
 
-        int count = 0;
+        int n = nums.size();
 
-        for(auto it = nums.begin(); it != nums.end(); ) {
+        int i = 0;
 
-            if(*it == val) {
+        for(int j = 0; j < n; j++) {
 
-                it = nums.erase(it);
+            if(nums[j] != val) {
 
-            }
-
-            else {
-
-                it++;
+                nums[i] = nums[j];
+                i++;
 
             }
 
         }
 
-        for(auto it : nums) {
-
-            count++;
-
-        }
-
-        return count;
+        return i;
+        
     }
 };
