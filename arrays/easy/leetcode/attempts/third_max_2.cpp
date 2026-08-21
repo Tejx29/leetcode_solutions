@@ -5,6 +5,8 @@ using namespace std;
 
 int thirdMax(vector<int>& nums) {
 
+    auto max_val = max_element(nums.begin(), nums.end());
+
     
 
 }
