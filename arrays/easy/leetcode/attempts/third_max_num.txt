@@ -115,3 +115,71 @@ public:
         }
     }
 };
+
+--------------------------------------------------------
+
+auto max_Val = *max_element(nums.begin(), nums.end());
+    int tmax = 0;
+
+    int i = 0;
+
+    for(int j = i + 1; j < nums.size(); j++) {
+
+        cout << endl;
+
+        cout << "i: " << i << "j: " << j << endl;
+        
+        if(nums.size() == 2) {
+
+            cout << "1 if" << endl;
+
+            return max_Val;
+
+        }
+        
+        if(nums[i] == max_Val) {
+
+            cout << "2 if" << endl;
+            
+            i++;
+
+        }
+
+        if(nums[j] == max_Val) {
+
+            cout << "3 if" << endl;
+            
+            continue;
+
+        }
+
+        if(nums[i] < nums[j]) {
+
+            cout << "4 if" << endl;
+
+            tmax = nums[i];
+
+            cout << "tmax 1: " << tmax << endl;
+
+            i++;
+
+        }
+
+        else {
+
+            cout << "else" << endl;
+
+            tmax = nums[j];
+
+            cout << "tmax 2: " << tmax << endl;
+
+            i++;
+        }
+
+    }
+
+    return tmax;
+
+    ------------------------------------------------------
+
+    
