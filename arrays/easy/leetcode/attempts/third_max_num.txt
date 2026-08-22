@@ -182,4 +182,244 @@ auto max_Val = *max_element(nums.begin(), nums.end());
 
     ------------------------------------------------------
 
+    class Solution {
+public:
+    int thirdMax(vector<int>& nums) {
+
+        int maxi = INT_MIN;
+        int tmax = 0;
+        
+        for(int i = 0; i < nums.size(); i++) {
+
+            if(i == 0 && nums[i] > maxi) {
+
+                cout << "1 if" << endl;
+
+                maxi = nums[i];
+
+                cout << "maxi 1 if: " << maxi << endl;
+
+                continue;
+            }    
+
+            if(nums[i] > maxi) {
+
+                cout << "2 if" << endl;
+
+                nums[0] = nums[i];
+                nums[1] = maxi;
+
+                maxi = nums[0];
+
+                cout << "nums[0] nums[1] 1 if: " << nums[0] << " " << nums[1] << endl;
+                cout << "maxi 2 if: " << maxi << endl;
+
+            }
+
+            else if(nums[i] == maxi) {
+
+                cout << "elif" << endl;
+
+                continue;
+
+            }
+
+            else if(nums[i - 1] - nums[i] == 1) {
+
+                tmax = nums[i];
+
+            } 
+
+            else if(nums[i] < maxi && i == 1 || i == 2) {
+
+                nums[i] = nums[i];
+
+            }
+
+            else {
+
+                cout << "else" << endl;
+
+                nums[2] = nums[i];
+                tmax = nums[2];
+                cout << "nums[2] nums[i] else: " << nums[2] << " " << nums[i] << endl;
+
+            }
+
+        }
+
+        if(tmax == 0) {
+            
+            return maxi;
+
+        }
+
+        else {
+            
+            return tmax;
+
+        }
+    }
+};
+
+-------------------------------------------------
+
+int first = 0;
+    int second = 0;
+    int third = 0;
+
+    auto max_val = *max_element(nums.begin(), nums.end());
+
+    for(int i = 0; i < nums.size(); i++) {
+
+        cout << endl;
+
+        cout << "i: " << i << endl;
+
+        if(third == 0 && nums[i] != max_val) {
+
+            third = nums[i];
+
+        }
+
+        else if(third == 0 && nums[i] == max_val) {
+
+            first = nums[i];
+
+        }
+
+        else if(second == 0) {
+
+            second = nums[i];
+
+        }
+
+        else if(first == 0 && nums[i] == max_val) {
+
+            first = nums[i];
+        
+        }
+
+        else if(nums[i] > first) {
+
+            first = nums[i];
+
+        }
+
+        else if(nums[i] > second) {
+
+            second = nums[i];
+
+        }
+
+        else if(nums[i] > third) {
+
+            third = nums[i];
+
+        }
+
+        else if(nums[i] < third) {
+
+            continue;
+
+        }
+
+        cout << first << " " << second << " " << third << " " << endl;
+         
+    }
+
+    ----------------------------------------
+
+    #include<iostream>
+#include<bits/stdc++.h>
+
+using namespace std;
+
+void thirdMax(vector<int>& nums) {
+
+    auto max_val = *max_element(nums.begin(), nums.end());
+
+    int first = max_val;
+    int second = 0;
+    int third = 0;
+
+    for(int i = 0; i < nums.size(); i++) {
+
+        cout << endl;
+
+        cout << "i: " << i << endl;
+
+        if(nums[i] == first || nums[i] == second || nums[i] == third) {
+
+            continue;
+
+        }
+
+        if(second == 0) {
+
+            second = nums[i]; 
+
+        }
+
+        else if (third == 0 && nums[i] > second) {
+
+            third = second;
+            second = nums[i];
+
+        }
+
+        else if(nums[i] > third) {
+
+            third = nums[i];
+
+        }
+
+        else if(nums[i] < third) {
+
+            continue;
+
+        }
+
+        
+        cout << first << " " << second << " " << third << endl;
+
+    }
+
+    cout << "Final: " << first << " " << second << " " << third << endl;
+
+    // if (third == 0) {
+
+    //     return first;
+
+    // }
+
+    // else {
+        
+    //     return third;
+
+    // }
     
+}
+
+int main () {
+
+    int n;
+
+    cout << "Enter size of array: ";
+    cin >> n;
+
+    vector<int> arr(n);
+
+    cout << "Enter array elements: " << endl;
+
+    for(int i = 0; i < n; i++) {
+
+        cin >> arr[i];
+
+    }
+
+    thirdMax (arr);
+    
+    return 0;
+
+}
