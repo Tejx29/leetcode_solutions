@@ -20,7 +20,7 @@ int thirdMax(vector<int>& nums) {
 
         cout << "i: " << i << endl;
 
-        if(nums[i] == first || nums[i] == second || nums[i] == third) {
+        if((nums[i] == first || nums[i] == second || nums[i] == third) && (nums[i] != 0)) {
 
             continue;
 
@@ -60,8 +60,7 @@ int thirdMax(vector<int>& nums) {
 
         else if(nums[i] <= third) {
 
-            third = nums[i];
-            third_exists++;
+            continue;
 
         }
 
