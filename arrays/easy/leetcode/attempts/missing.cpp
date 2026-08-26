@@ -15,12 +15,6 @@ void thirdMax(vector<int>& nums) {
 
     }
 
-    // for(int i = 1; i <= n; i++) {
-
-    //     cout << mp[i] << " ";
-
-    // }
-
     for(int i = 1; i <= n; i++) {
 
         if(s1.count(i)) {

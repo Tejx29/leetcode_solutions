@@ -6,30 +6,52 @@ using namespace std;
 void thirdMax(vector<int>& nums) {
 
     int n = nums.size();
-    
-    set<int> s1;
+
+    int visited;
 
     for(int i = 0; i < n; i++) {
 
-        s1.emplace(nums[i]);
+        if(nums[i] > 0) {
+            
+            visited = (nums[i]) - 1;
 
-    }
+            if(nums[visited] >= 0) {
 
-    // for(int i = 1; i <= n; i++) {
+                nums[visited] = -nums[visited];
 
-    //     cout << mp[i] << " ";
+                // cout << nums[visited];
 
-    // }
 
-    for(int i = 1; i <= n; i++) {
+            }
+        
+        }
+        else {
+            
+            nums[i] = -(nums[i]);
 
-        if(s1.count(i)) {
+            visited = (nums[i]) - 1;
 
-            continue;
+            if(nums[visited] >= 0) {
+
+                nums[visited] = -nums[visited];
+
+                // cout << nums[visited];
+
+
+            }
+
+            nums[i] = -(nums[i]);
+
+            cout << nums[i];
 
         }
 
-        cout << i << " ";
+    }
+
+    for(auto it : nums) {
+
+        cout << it << " ";
+
     }
 }
 
