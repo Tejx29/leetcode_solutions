@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void thirdMax(vector<int>& nums) {
+void findDisapperedNumbers (vector<int>& nums) {
 
     int n = nums.size();
 
@@ -19,9 +19,6 @@ void thirdMax(vector<int>& nums) {
 
                 nums[visited] = -nums[visited];
 
-                // cout << nums[visited];
-
-
             }
         
         }
@@ -35,22 +32,21 @@ void thirdMax(vector<int>& nums) {
 
                 nums[visited] = -nums[visited];
 
-                // cout << nums[visited];
-
-
             }
 
             nums[i] = -(nums[i]);
-
-            cout << nums[i];
 
         }
 
     }
 
-    for(auto it : nums) {
+    for(int i = 0; i < n; i++) {
 
-        cout << it << " ";
+        if(nums[i] > 0) {
+
+            cout << i + 1 << " ";
+
+        }
 
     }
 }
@@ -58,7 +54,7 @@ void thirdMax(vector<int>& nums) {
 int main () {
 
     int n;
-
+ 
     cout << "Enter size of array: ";
     cin >> n;
 
@@ -72,7 +68,7 @@ int main () {
 
     }
 
-    thirdMax (arr);
+    findDisapperedNumbers (arr);
     
     return 0;
 
