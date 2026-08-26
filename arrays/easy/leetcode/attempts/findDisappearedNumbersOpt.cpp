@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void findDisapperedNumbers (vector<int>& nums) {
+void findDisappearedNumbers (vector<int>& nums) {
 
     int n = nums.size();
 
@@ -72,7 +72,7 @@ int main () {
 
     }
 
-    findDisapperedNumbers (arr);
+    findDisappearedNumbers (arr);
     
     return 0;
 
