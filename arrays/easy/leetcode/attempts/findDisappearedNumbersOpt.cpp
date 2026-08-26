@@ -34,7 +34,11 @@ void findDisapperedNumbers (vector<int>& nums) {
 
             }
 
-            nums[i] = -(nums[i]);
+            if(nums[i] > 0) {
+                
+                nums[i] = -(nums[i]);
+            
+            }
 
         }
 
