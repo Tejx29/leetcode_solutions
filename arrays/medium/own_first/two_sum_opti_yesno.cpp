@@ -5,20 +5,43 @@ using namespace std;
 
 vector<int> two_sum (vector<int> &arr, int n, int target) {
     
-    unordered_map<int, int> hashmap;
+    int left = 0;
+    int right = n - 1;
 
-    for(int i = 0; i < n; i++) {
+    int sum = 0;
 
-        int needed = target - arr[i];
+    sort(arr.begin(), arr.end());
 
-        if(hashmap.contains(needed)) {
-            return {hashmap[needed], i};
+    for(int i = left; i < right; i++) {
+
+        for(int j = right; j > left; j--) {
+
+            sum = arr[i] + arr[j];
+
+            if(sum > target) {
+
+                continue;
+
+            }
+
+            else if(sum < target){
+
+                break;
+
+            }
+
+            else {
+
+                return{arr[i], arr[j]};
+
+            }
+
         }
 
-        hashmap[arr[i]] = i;
     }
 
-    return {};
+    return{};
+
 }
 
 
