@@ -12,29 +12,25 @@ vector<int> two_sum (vector<int> &arr, int n, int target) {
 
     sort(arr.begin(), arr.end());
 
-    for(int i = left; i < right; i++) {
+    while(left < right) {
 
-        for(int j = right; j > left; j--) {
+        sum = arr[left] + arr[right];
 
-            sum = arr[i] + arr[j];
+        if(sum > target) {
 
-            if(sum > target) {
+            right--;
 
-                continue;
+        }
 
-            }
+        else if(sum < target){
 
-            else if(sum < target){
+            left++;
 
-                break;
+        }
 
-            }
+        else {
 
-            else {
-
-                return{arr[i], arr[j]};
-
-            }
+            return{arr[left], arr[right]};
 
         }
 
