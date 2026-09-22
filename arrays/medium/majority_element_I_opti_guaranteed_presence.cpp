@@ -4,7 +4,7 @@
 using namespace std;
 
 int majority_element_I (vector<int> &arr, int n) {
-
+    
     int element = arr[0];
     int count = 0;
     
