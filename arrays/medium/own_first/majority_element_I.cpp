@@ -5,7 +5,7 @@ using namespace std;
 
 int majority_element_I (vector<int> &arr, int n) {
 
-    int maximum_adr = INT_MIN;
+    int maximum_freq = 0;
     int maximum_val = 0;
     
     unordered_map<int, int> hashmap;
@@ -20,9 +20,9 @@ int majority_element_I (vector<int> &arr, int n) {
     
     for(auto it : hashmap) {
     
-        if(it.second > maximum_adr) {
+        if(it.second > maximum_freq) {
         
-            maximum_adr = it.second;
+            maximum_freq = it.second;
             maximum_val = it.first;
         
         }
