@@ -3,26 +3,24 @@
 
 using namespace std;
 
-vector<int> two_sum_3 (vector<int> &arr, int n, int target, map <int, int> &mpp) {
+vector<int> two_sum (vector<int> &arr, int n, int target) {
+    
+    unordered_map<int, int> hashmap;
 
     for(int i = 0; i < n; i++) {
-    
-        int curr_element = arr[i];
-        
-        int required = target - curr_element;
-        
-        if(mpp.find(required) != mpp.end()) {
-        
-            return {mpp[required], i};            // or return 1; 
-            
+
+        int needed = target - arr[i];
+
+        if(hashmap.find(needed) != hashmap.end()) {
+            return {hashmap[needed], i};
         }
-        
-        mpp[curr_element] = i;
-        
+
+        hashmap[arr[i]] = i;
     }
-    
-    return {-1, -1};                              // or return 0;           
+
+    return {};
 }
+
 
 int main () {
 
@@ -32,8 +30,6 @@ int main () {
     cin >> n;
 
     vector<int> arr(n);
-
-    map <int, int> mpp;
 
     cout << "Enter array elements: " << endl;
 
@@ -48,10 +44,10 @@ int main () {
     cout << "Enter target: ";
     cin >> target;
 
-    vector<int> ans = two_sum_3(arr, n, target, mpp);
+    vector<int> ans = two_sum (arr, n, target);
 
-    cout << "[" << ans[0] << ", " << ans[1] << "]" << endl;
-    
+    cout << ans[0] << " " << ans[1] << endl;    
+
     return 0;
 
 }
