@@ -10,59 +10,57 @@ vector<int> spiralOrder(vector<vector<int>>& matrix, int rows, int cols) {
     int left = 0;
     int right = cols - 1;
 
-    for(int i = left; i <= right; i++) {
+    vector<int> answer;
 
-        cout << matrix[top][i];
+    while(top <= bottom && left <= right) {
+        //right
+        
+        for(int i = left; i <= right; i++) {
 
+            answer.push_back(matrix[top][i]);
+
+        }
+
+        top++;
+
+
+        //down
+
+        for(int i = top; i <= bottom; i++) {
+
+            answer.push_back(matrix[i][right]);
+        }
+
+        right--;
+
+
+        // left
+
+        if(top <= bottom) {
+        
+            for(int i = right; i >= left; i--) {
+
+                answer.push_back(matrix[bottom][i]);
+
+            }    
+
+            bottom--;
+        }
+
+        // up
+
+        if(left <= right) {
+            for(int i = bottom; i >= top; i--) {
+
+                answer.push_back(matrix[i][left]);
+
+            }
+
+            left++;
+        }
     }
 
-    cout << endl;
-
-    top++;
-
-    cout << "top: " << top << endl;
-
-    for(int i = top; i <= bottom; i++) {
-
-        cout << matrix[i][right];
-
-    }
-
-    cout << endl;
-
-    right--;
-
-    cout << "right: " << right << endl;
-
-    for(int i = right; i >= left; i--) {
-
-        cout << matrix[bottom][i];
-
-    }    
-
-    cout << endl;
-
-    bottom--;
-
-    cout << "bottom: " << bottom << endl;
-    cout << "top: " << top << endl;
-
-    for(int i = bottom; i >= top; i--) {
-
-        cout << matrix[i][left];
-
-    }
-
-    // for (int i = 0; i < rows; ++i) {
-        
-    //     for (int j = 0; j < cols; ++j) {
-        
-    //         cout << matrix[i][j] << " ";
-        
-    //     }
-        
-    //     cout << "\n";
-    // }
+    return answer;
 
 }
 
@@ -97,19 +95,6 @@ int main()
 
         cout << it << " ";
 
-    }
-
-    cout << "\nYour 2D Matrix:\n";
-    
-    for (int i = 0; i < rows; ++i) {
-        
-        for (int j = 0; j < cols; ++j) {
-        
-            cout << matrix[i][j] << " ";
-        
-        }
-        
-        cout << "\n";
     }
 
     return 0;
