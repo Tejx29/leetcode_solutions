@@ -13,6 +13,7 @@ vector<int> spiralOrder(vector<vector<int>>& matrix, int rows, int cols) {
     vector<int> answer;
 
     while(top <= bottom && left <= right) {
+        
         //right
         
         for(int i = left; i <= right; i++) {
