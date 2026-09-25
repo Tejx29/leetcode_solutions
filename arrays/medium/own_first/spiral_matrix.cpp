@@ -37,7 +37,7 @@ vector<int> spiralOrder(vector<vector<int>>& matrix, int rows, int cols) {
 
         // left
 
-        if(top <= bottom) {
+        if(top <= bottom) {                                        //row still exists?
         
             for(int i = right; i >= left; i--) {
 
@@ -50,7 +50,7 @@ vector<int> spiralOrder(vector<vector<int>>& matrix, int rows, int cols) {
 
         // up
 
-        if(left <= right) {
+        if(left <= right) {                                         //column still exists?
             for(int i = bottom; i >= top; i--) {
 
                 answer.push_back(matrix[i][left]);
