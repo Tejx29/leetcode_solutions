@@ -5,7 +5,7 @@ using namespace std;
 
 int func_nCr (int row, int col) {
 
-    int result = 1;
+    long long result = 1;
 
     for(int i = 0; i < col; i++) {
 
